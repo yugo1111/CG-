@@ -39,13 +39,11 @@
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
 
-  // 箱を作成
-  var geometry = new THREE.BoxGeometry(1, 1, 1);
-  //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
-  //var box = new THREE.Mesh(geometry, material);
-  var box = new THREE.Mesh(geometry, mat);
-  box.position.z = -5;
-  scene.add(box);
+  // 平面を作成
+  var planeGeometry = new THREE.PlaneGeometry(5,5,5,5);
+  var plane = new THREE.Mesh(planeGeometry,mat);
+  plane.rotation.set( -Math.PI/2, 0, 0 );
+  plane.position.set(0,-1,0);
 
  // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
